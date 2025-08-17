@@ -1418,63 +1418,61 @@ export default function Home() {
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <div className="inline-block px-4 py-2 bg-white/10 text-white rounded-full text-sm font-medium mb-4 backdrop-blur-sm">
+          <div className="text-center mb-8 sm:mb-12">
+            <div className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 bg-white/10 text-white rounded-full text-xs sm:text-sm font-medium mb-3 sm:mb-4 backdrop-blur-sm">
               Contact Us
             </div>
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
-              Ready to <span className="text-orange-400">Protect</span> Your
-              Property?
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4">
+              Ready to <span className="text-orange-400">Protect</span> Your Property?
             </h2>
-            <p className="text-xl text-blue-100 max-w-2xl mx-auto">
-              Get your free consultation today and discover why we&apos;re
-              Quetta&apos;s #1 choice for waterproofing
+            <p className="text-base sm:text-lg md:text-xl text-blue-100 max-w-xs sm:max-w-xl md:max-w-2xl mx-auto">
+              Get your free consultation today and discover why we&apos;re Quetta&apos;s #1 choice for waterproofing
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 text-center mb-12">
-            <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 hover:bg-white/15 transition-all duration-300 group border border-white/20">
-              <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                <Phone className="h-8 w-8 text-white" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 text-center mb-8 sm:mb-12">
+            <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-5 sm:p-6 md:p-8 hover:bg-white/15 transition-all duration-300 group border border-white/20 flex flex-col items-center">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300">
+                <Phone className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 text-white" />
               </div>
-              <h3 className="text-2xl font-semibold text-white mb-4">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-white mb-2 sm:mb-4">
                 Call Us Now
               </h3>
-              <p className="text-blue-100 text-lg mb-2">+92 0302-3684297</p>
-              <p className="text-blue-100 text-lg mb-4">+92 0315-8022932</p>
-              <p className="text-blue-200 text-sm">
+              <p className="text-blue-100 text-base sm:text-lg mb-1 sm:mb-2">+92 0302-3684297</p>
+              <p className="text-blue-100 text-base sm:text-lg mb-2 sm:mb-4">+92 0315-8022932</p>
+              <p className="text-blue-200 text-xs sm:text-sm">
                 Available 24/7 for emergencies
               </p>
             </div>
-            <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 hover:bg-white/15 transition-all duration-300 group border border-white/20">
-              <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                <Mail className="h-8 w-8 text-white" />
+            <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-5 sm:p-6 md:p-8 hover:bg-white/15 transition-all duration-300 group border border-white/20 flex flex-col items-center">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300">
+                <Mail className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 text-white" />
               </div>
-              <h3 className="text-2xl font-semibold text-white mb-4">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-white mb-2 sm:mb-4">
                 Email Us
               </h3>
-              <p className="text-blue-100 text-lg mb-2">
+              <p className="text-blue-100 text-base sm:text-lg mb-1 sm:mb-2">
                 quettachemical.services@gmail.com
               </p>
-              <p className="text-blue-100 text-lg mb-4">
+              <p className="text-blue-100 text-base sm:text-lg mb-2 sm:mb-4">
                 quettachemical.services@gmail.com
               </p>
-              <p className="text-blue-200 text-sm">Response within 2 hours</p>
+              <p className="text-blue-200 text-xs sm:text-sm">Response within 2 hours</p>
             </div>
-            <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 hover:bg-white/15 transition-all duration-300 group border border-white/20">
-              <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                <MapPin className="h-8 w-8 text-white" />
+            <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-5 sm:p-6 md:p-8 hover:bg-white/15 transition-all duration-300 group border border-white/20 flex flex-col items-center">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300">
+                <MapPin className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 text-white" />
               </div>
-              <h3 className="text-2xl font-semibold text-white mb-4">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-white mb-2 sm:mb-4">
                 Visit Our Office
               </h3>
-              <p className="text-blue-100 text-lg mb-2">
+              <p className="text-blue-100 text-base sm:text-lg mb-1 sm:mb-2">
                 Block 13-D2, Gulshan-e-Iqbal, Karachi
               </p>
-              <p className="text-blue-100 text-lg mb-4">
+              <p className="text-blue-100 text-base sm:text-lg mb-2 sm:mb-4">
                 Karachi, Pakistan
               </p>
-              <p className="text-blue-200 text-sm">Mon-Sat: 8AM-6PM</p>
+              <p className="text-blue-200 text-xs sm:text-sm">Mon-Sat: 8AM-6PM</p>
             </div>
           </div>
 
@@ -1515,7 +1513,7 @@ export default function Home() {
               const [showEmailOptions, setShowEmailOptions] = React.useState(false);
 
               // Email recipient
-              const emailRecipient = "khizershah493@gmail.com";
+              const emailRecipient = "quettachemical.services@gmail.com";
 
               // Compose email subject and body
               const subject = encodeURIComponent("New Customer Contact Form Submission from || www.qcswaterproofing.com");
