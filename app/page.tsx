@@ -185,6 +185,33 @@ export default function Home() {
     },
   ];
 
+  const projectGallery = [
+    {
+      image: '/images/WhatsApp%20Image%202026-06-07%20at%208.34.55%20AM.jpeg',
+      title: 'Fresh Heat-Reflective Roof Finish',
+      description:
+        'Uniform white coating designed to reduce roof temperature and improve long-term weather resistance.',
+    },
+    {
+      image: '/images/WhatsApp%20Image%202026-06-07%20at%208.34.57%20AM.jpeg',
+      title: 'Equipment Base Protection Work',
+      description:
+        'Detailed waterproofing around raised structures and service units to block seepage at vulnerable joints.',
+    },
+    {
+      image: '/images/WhatsApp%20Image%202026-06-07%20at%208.34.59%20AM.jpeg',
+      title: 'Metal Roof Joint Sealing',
+      description:
+        'Targeted treatment on panel overlaps and channels for reliable leak control in exposed roof areas.',
+    },
+    {
+      image: '/images/WhatsApp%20Image%202026-06-07%20at%208.35.11%20AM%20(1).jpeg',
+      title: 'Completed Industrial Roof Coating',
+      description:
+        'Large-scale completed roof with clean finishing and consistent protective coverage across the surface.',
+    },
+  ];
+
   const navItems = [
     {
       name: 'Services',
@@ -197,6 +224,7 @@ export default function Home() {
       ],
     },
     { name: 'Process', href: '#process' },
+    { name: 'Projects', href: '#projects' },
     { name: 'About', href: '#about' },
     { name: 'Contact', href: '#contact' },
   ];
@@ -1196,6 +1224,63 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Project Gallery Section */}
+      <section
+        id="projects"
+        className="py-20 bg-gradient-to-b from-slate-50 via-white to-blue-50/40 relative overflow-hidden"
+      >
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-0 left-1/3 h-64 w-64 rounded-full bg-blue-100/60 blur-3xl"></div>
+          <div className="absolute bottom-0 right-1/4 h-72 w-72 rounded-full bg-cyan-100/60 blur-3xl"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="text-center mb-14">
+            <div className="inline-block px-4 py-2 bg-cyan-100 text-cyan-800 rounded-full text-sm font-semibold mb-4">
+              Recent Projects
+            </div>
+            <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
+              Real Roof <span className="text-cyan-700">Transformation</span>
+            </h2>
+            <p className="text-lg text-slate-600 max-w-3xl mx-auto">
+              A snapshot of our on-site roof waterproofing and heatproofing work with clean finishing,
+              professional detailing, and durable protection.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {projectGallery.map((project, index) => (
+              <Card
+                key={index}
+                className="group overflow-hidden border-slate-200/70 bg-white/90 backdrop-blur-sm hover:shadow-2xl hover:shadow-cyan-100 transition-all duration-500"
+              >
+                <CardContent className="p-0">
+                  <div className="relative overflow-hidden">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="h-72 w-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      draggable={false}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-slate-900/20 to-transparent"></div>
+                    <div className="absolute top-4 left-4">
+                      <span className="inline-flex items-center rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-slate-700">
+                        Project {index + 1}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold text-slate-900 mb-2">{project.title}</h3>
+                    <p className="text-slate-600 leading-relaxed">{project.description}</p>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Enhanced Testimonials */}
       <section className="py-20 bg-gradient-to-br from-gray-900 to-blue-900 relative overflow-hidden">
         {/* Background Pattern */}
@@ -1440,6 +1525,7 @@ export default function Home() {
               </h3>
               <p className="text-blue-100 text-base sm:text-lg mb-1 sm:mb-2">+92 0302-3684297</p>
               <p className="text-blue-100 text-base sm:text-lg mb-2 sm:mb-4">+92 0315-8022932</p>
+              <p className="text-blue-100 text-base sm:text-lg mb-2 sm:mb-4">+92 0315-1221594</p>
               <p className="text-blue-200 text-xs sm:text-sm">
                 Available 24/7 for emergencies
               </p>
