@@ -337,10 +337,10 @@ export default function Home() {
             <a href="#" className="flex items-center space-x-3 group">
               <div className="relative">
                 <img
-                  src="/logo.png"
-                  alt="QCS Logo"
+                  src="/logo-alt.svg"
+                  alt="QCS Waterproofing Logo"
                   className={cn(
-                    'h-11 w-11 transition-all duration-300 drop-shadow-lg',
+                    'h-12 w-12 transition-all duration-300 drop-shadow-lg',
                     isScrolled ? 'brightness-100' : 'brightness-110'
                   )}
                 />
@@ -352,7 +352,7 @@ export default function Home() {
                     isScrolled ? 'text-blue-900' : 'text-white'
                   )}
                 >
-                  Quetta Chemical
+                  QCS Waterproofing
                 </span>
                 <span
                   className={cn(
@@ -360,7 +360,7 @@ export default function Home() {
                     isScrolled ? 'text-blue-600' : 'text-blue-200'
                   )}
                 >
-                  Waterproofing Experts
+                  Professional Solutions
                 </span>
               </div>
             </a>

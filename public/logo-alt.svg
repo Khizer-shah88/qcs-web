@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Main Background -->
+  <circle cx="24" cy="24" r="23" fill="url(#mainGradient)" stroke="#1e40af" stroke-width="1"/>
+  
+  <!-- Building/House Shape -->
+  <path d="M12 28 L24 18 L36 28 L36 36 L12 36 Z" fill="#1e40af" opacity="0.1"/>
+  <path d="M12 28 L24 18 L36 28" stroke="#1e40af" stroke-width="1.5" fill="none"/>
+  
+  <!-- Water Drops -->
+  <circle cx="18" cy="32" r="1.5" fill="#0ea5e9"/>
+  <circle cx="24" cy="30" r="1.8" fill="#0ea5e9"/>
+  <circle cx="30" cy="32" r="1.5" fill="#0ea5e9"/>
+  
+  <!-- Shield -->
+  <path d="M20 22 L24 20 L28 22 L28 28 C28 30, 26 32, 24 34 C22 32, 20 30, 20 28 Z" fill="none" stroke="#059669" stroke-width="1.5"/>
+  
+  <!-- Protective Barrier Line -->
+  <path d="M14 38 Q24 35 34 38" stroke="#0ea5e9" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+  
+  <defs>
+    <linearGradient id="mainGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f0f9ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e0f2fe;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+</svg>
