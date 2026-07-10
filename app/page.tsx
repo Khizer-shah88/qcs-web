@@ -1494,7 +1494,7 @@ export default function Home() {
                 </li>
                 <li className="flex items-center gap-2">
                   <Mail className="h-4 w-4 text-blue-400 flex-shrink-0" />
-                  <span className="break-all">quettachemical.services@gmail.com</span>
+                  <span className="break-all">quettachemicals.services@gmail.com</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <MapPin className="h-4 w-4 text-blue-400 flex-shrink-0 mt-0.5" />
@@ -1522,7 +1522,7 @@ export default function Home() {
           {/* Bottom bar */}
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 border-t border-gray-700/50 pt-8">
             <p className="text-gray-500 text-sm">
-              &copy; 2025 <span className="font-semibold text-blue-300">Quetta Chemical Service</span>. All rights reserved.
+              &copy; 2025 <span className="font-semibold text-blue-300">Quetta Chemical Services</span>. All rights reserved.
             </p>
             <div className="flex space-x-6 text-gray-500 text-xs">
               <a href="#" className="hover:text-blue-300 transition-colors">Privacy Policy</a>
@@ -1564,7 +1564,7 @@ export default function Home() {
           <EmailProviderPopup
             onClose={() => setShowEmailPopup(false)}
             onSelect={(provider) => {
-              const email = 'quettachemical.services@gmail.com';
+              const email = 'quettachemicals.services@gmail.com';
               const subject = encodeURIComponent('New Service Quote Request');
               const body = encodeURIComponent('I would like to request a quote for waterproofing services.');
               let url = '';
