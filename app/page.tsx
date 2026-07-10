@@ -122,8 +122,8 @@ const testimonials = [
 const projectGallery = [
   { image: 'https://images.pexels.com/photos/2760243/pexels-photo-2760243.jpeg?auto=compress&cs=tinysrgb&w=800', title: 'Fresh Heat-Reflective Roof Finish', description: 'Uniform white coating designed to reduce roof temperature and improve long-term weather resistance.' },
   { image: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800', title: 'Equipment Base Protection Work', description: 'Detailed waterproofing around raised structures and service units to block seepage at vulnerable joints.' },
-  { image: '/metal.jpeg', title: 'Metal Roof Joint Sealing', description: 'Targeted treatment on panel overlaps and channels for reliable leak control in exposed roof areas.' },
-  { image: 'https://images.pexels.com/photos/1571468/pexels-photo-1571468.jpeg?auto=compress&cs=tinysrgb&w=800', title: 'Completed Industrial Roof Coating', description: 'Large-scale completed roof with clean finishing and consistent protective coverage across the surface.' },
+  { image: '/images/metal.jpeg', title: 'Metal Roof Joint Sealing', description: 'Targeted treatment on panel overlaps and channels for reliable leak control in exposed roof areas.' },
+  { image: '/images/floor.jpg', title: 'Completed Industrial Roof Coating', description: 'Large-scale completed roof with clean finishing and consistent protective coverage across the surface.' },
 ];
 
 const timeline = [
