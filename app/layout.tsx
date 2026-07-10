@@ -6,7 +6,7 @@ import { Inter } from 'next/font/google';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'QCS Waterproofing - Professional Waterproofing Services in Quetta',
+  title: 'quetta chemical services Waterproofing - Professional Waterproofing Services in Quetta',
   description: 'Expert ceiling waterproofing, heatproofing, and comprehensive water protection services in Quetta. Professional solutions with 5-year warranty.',
   keywords: 'waterproofing, heatproofing, ceiling waterproofing, water tank leakage, Quetta, roof protection',
 };

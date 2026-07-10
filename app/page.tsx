@@ -122,7 +122,7 @@ const testimonials = [
 const projectGallery = [
   { image: 'https://images.pexels.com/photos/2760243/pexels-photo-2760243.jpeg?auto=compress&cs=tinysrgb&w=800', title: 'Fresh Heat-Reflective Roof Finish', description: 'Uniform white coating designed to reduce roof temperature and improve long-term weather resistance.' },
   { image: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800', title: 'Equipment Base Protection Work', description: 'Detailed waterproofing around raised structures and service units to block seepage at vulnerable joints.' },
-  { image: 'https://images.pexels.com/photos/159213/hall-construction-site-concrete-159213.jpeg?auto=compress&cs=tinysrgb&w=800', title: 'Metal Roof Joint Sealing', description: 'Targeted treatment on panel overlaps and channels for reliable leak control in exposed roof areas.' },
+  { image: '/metal.jpeg', title: 'Metal Roof Joint Sealing', description: 'Targeted treatment on panel overlaps and channels for reliable leak control in exposed roof areas.' },
   { image: 'https://images.pexels.com/photos/1571468/pexels-photo-1571468.jpeg?auto=compress&cs=tinysrgb&w=800', title: 'Completed Industrial Roof Coating', description: 'Large-scale completed roof with clean finishing and consistent protective coverage across the surface.' },
 ];
 
@@ -1522,7 +1522,7 @@ export default function Home() {
           {/* Bottom bar */}
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 border-t border-gray-700/50 pt-8">
             <p className="text-gray-500 text-sm">
-              &copy; 2025 <span className="font-semibold text-blue-300">Quetta Chemical Services</span>. All rights reserved.
+              &copy; 2025 <span className="font-semibold text-blue-300">Quetta Chemical Service</span>. All rights reserved.
             </p>
             <div className="flex space-x-6 text-gray-500 text-xs">
               <a href="#" className="hover:text-blue-300 transition-colors">Privacy Policy</a>
