@@ -122,7 +122,7 @@ const testimonials = [
 const projectGallery = [
   { image: 'https://images.pexels.com/photos/2760243/pexels-photo-2760243.jpeg?auto=compress&cs=tinysrgb&w=800', title: 'Fresh Heat-Reflective Roof Finish', description: 'Uniform white coating designed to reduce roof temperature and improve long-term weather resistance.' },
   { image: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800', title: 'Equipment Base Protection Work', description: 'Detailed waterproofing around raised structures and service units to block seepage at vulnerable joints.' },
-  { image: '/public/metal.jpeg', title: 'Metal Roof Joint Sealing', description: 'Targeted treatment on panel overlaps and channels for reliable leak control in exposed roof areas.' },
+  { image: '/metal.jpeg', title: 'Metal Roof Joint Sealing', description: 'Targeted treatment on panel overlaps and channels for reliable leak control in exposed roof areas.' },
   { image: 'https://images.pexels.com/photos/1571468/pexels-photo-1571468.jpeg?auto=compress&cs=tinysrgb&w=800', title: 'Completed Industrial Roof Coating', description: 'Large-scale completed roof with clean finishing and consistent protective coverage across the surface.' },
 ];
 
@@ -701,19 +701,888 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Show modals */}
+      {/* ═══════════════ Stats Bar ═══════════════ */}
+      <section className="relative py-14 bg-gradient-to-r from-blue-900 via-blue-800 to-blue-700 overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMSIgZmlsbD0id2hpdGUiLz48L3N2Zz4=')]" />
+        </div>
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-8 text-center"
+        >
+          {[
+            { value: '10+', label: 'Years of Excellence' },
+            { value: '500+', label: 'Projects Completed' },
+            { value: '24/7', label: 'Emergency Service' },
+            { value: '100%', label: 'Satisfaction Rate' },
+          ].map((stat, i) => (
+            <motion.div key={stat.label} variants={fadeInUp} custom={i} className="group">
+              <div className="text-3xl sm:text-4xl font-extrabold text-white mb-2 group-hover:scale-110 transition-transform duration-300">
+                {stat.value}
+              </div>
+              <div className="text-blue-200 text-sm">{stat.label}</div>
+            </motion.div>
+          ))}
+        </motion.div>
+      </section>
+
+
+      {/* ═══════════════ Services Section ═══════════════ */}
+      <section id="services" className="relative py-24 bg-gradient-to-br from-slate-50 via-white to-blue-50/50 overflow-hidden">
+        {/* Background pattern */}
+        <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_1px_at_1px_1px,#1e3a8a_1px,transparent_0)] bg-[length:40px_40px]" />
+        </div>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <SectionBadge className="bg-blue-100 text-blue-700">Our Expertise</SectionBadge>
+            <motion.h2
+              variants={fadeInUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-5"
+            >
+              Specialized <span className="text-blue-700">Waterproofing</span> Services
+            </motion.h2>
+            <motion.p
+              variants={fadeInUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed"
+            >
+              Comprehensive solutions for all your waterproofing needs with cutting-edge technology and expert craftsmanship
+            </motion.p>
+          </div>
+
+          {/* Service Cards */}
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-100px' }}
+            className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8"
+          >
+            {services.map((service, index) => (
+              <motion.div
+                key={index}
+                variants={fadeInUp}
+                custom={index}
+                whileHover={{ y: -8, transition: { duration: 0.4 } }}
+                className="group bg-white rounded-2xl shadow-lg shadow-gray-200/50 overflow-hidden border border-gray-100/80 transition-shadow duration-500 hover:shadow-2xl hover:shadow-blue-900/10"
+              >
+                {/* Image */}
+                <div className="relative overflow-hidden h-52">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    draggable={false}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                  {/* Icon badge */}
+                  <div className="absolute top-4 left-4 bg-white/20 backdrop-blur-md rounded-full p-2.5 border border-white/10">
+                    <service.icon className="h-6 w-6 text-white" />
+                  </div>
+                  {/* Title overlay */}
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <h3 className="text-xl font-bold text-white">{service.title}</h3>
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="p-6">
+                  <p className="text-gray-600 mb-5 leading-relaxed text-sm">{service.description}</p>
+                  <ul className="space-y-3 mb-6">
+                    {service.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-center">
+                        <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                          <CheckCircle className="h-3.5 w-3.5 text-green-600" />
+                        </div>
+                        <span className="text-gray-700 text-sm">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <button
+                    onClick={() => setOpenService(index)}
+                    className="w-full py-3 px-5 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white rounded-xl font-semibold text-sm transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/20 hover:scale-[1.02] active:scale-[0.97] flex items-center justify-center group/btn"
+                  >
+                    Learn More
+                    <ChevronRight className="ml-1 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
+                  </button>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          {/* CTA Banner */}
+          <motion.div
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="mt-16"
+          >
+            <div className="bg-white rounded-3xl shadow-xl shadow-gray-200/50 p-8 md:p-10 max-w-4xl mx-auto border border-gray-100/80 text-center">
+              <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">Need a Custom Solution?</h3>
+              <p className="text-gray-600 mb-8 text-lg leading-relaxed">
+                Every property is unique. Let our experts assess your specific needs and provide a tailored waterproofing solution.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <button
+                  onClick={handleWhatsAppRedirect}
+                  className="inline-flex items-center justify-center px-7 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-xl font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-orange-500/25 hover:scale-[1.03] active:scale-[0.97]"
+                >
+                  <Phone className="mr-2 h-5 w-5" />
+                  Schedule Consultation
+                </button>
+                <button
+                  onClick={handleWhatsAppRedirect}
+                  className="inline-flex items-center justify-center px-7 py-4 border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white rounded-xl font-semibold transition-all duration-300 hover:scale-[1.03] active:scale-[0.97]"
+                >
+                  <Mail className="mr-2 h-5 w-5" />
+                  Get Quote Online
+                </button>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ═══════════════ Process Section ═══════════════ */}
+      <section id="process" className="relative py-24 bg-white overflow-hidden">
+        {/* Decorative blobs */}
+        <div className="absolute top-0 left-0 w-72 h-72 bg-blue-100 rounded-full -translate-x-36 -translate-y-36 opacity-50 blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-orange-100 rounded-full translate-x-48 translate-y-48 opacity-50 blur-3xl pointer-events-none" />
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <SectionBadge className="bg-orange-100 text-orange-700">Our Process</SectionBadge>
+            <motion.h2
+              variants={fadeInUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-5"
+            >
+              Step-by-Step <span className="text-orange-600">Excellence</span>
+            </motion.h2>
+            <motion.p
+              variants={fadeInUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="text-lg text-gray-600 max-w-3xl mx-auto"
+            >
+              Our proven 5-step process ensures quality results and complete customer satisfaction
+            </motion.p>
+          </div>
+
+          {/* Process Steps */}
+          <div className="space-y-20">
+            {processSteps.map((step, index) => (
+              <motion.div
+                key={index}
+                variants={index % 2 === 0 ? fadeInLeft : fadeInRight}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: '-100px' }}
+                className={cn(
+                  'flex flex-col gap-10 items-center',
+                  index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
+                )}
+              >
+                {/* Text */}
+                <div className="flex-1 space-y-5">
+                  <div className="flex items-center gap-5">
+                    <div className="relative flex-shrink-0">
+                      <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-700 text-white rounded-2xl flex items-center justify-center font-extrabold text-2xl shadow-lg shadow-blue-500/25">
+                        {step.step}
+                      </div>
+                      <div className="absolute -inset-2 bg-blue-200 rounded-2xl -z-10 opacity-50 group-hover:scale-110 transition-transform" />
+                    </div>
+                    <div>
+                      <h3 className="text-2xl sm:text-3xl font-bold text-gray-900">{step.title}</h3>
+                      <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-orange-500 rounded-full mt-2" />
+                    </div>
+                  </div>
+                  <p className="text-gray-600 leading-relaxed text-base pl-[84px]">{step.description}</p>
+                  <div className="pl-[84px] space-y-2">
+                    {step.checks.map((check, ci) => (
+                      <div key={ci} className="flex items-center text-gray-700">
+                        <CheckCircle className="h-4 w-4 text-green-500 mr-3 flex-shrink-0" />
+                        <span className="text-sm">{check}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Image */}
+                <div className="flex-1 w-full">
+                  <div className="relative group/image overflow-hidden rounded-2xl shadow-2xl">
+                    <img
+                      src={step.image}
+                      alt={step.title}
+                      className="w-full h-72 sm:h-80 object-cover transition-transform duration-700 group-hover/image:scale-105"
+                      draggable={false}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                    <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-4 py-2 shadow-lg">
+                      <span className="text-sm font-semibold text-gray-800">Step {step.step}</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Connecting line (desktop only) */}
+                {index < processSteps.length - 1 && (
+                  <div className="hidden lg:block absolute left-1/2 -translate-x-1/2 h-20 w-px bg-gradient-to-b from-blue-300 to-transparent" style={{ marginTop: `${index * 100 + 320}px` }} />
+                )}
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Timeline Strip */}
+          <motion.div
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="mt-24 bg-gradient-to-r from-blue-50 to-orange-50 rounded-3xl p-8 sm:p-10 border border-blue-100/50"
+          >
+            <div className="text-center mb-8">
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">Typical Project Timeline</h3>
+              <p className="text-gray-600">Most projects completed within this timeframe</p>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-5 gap-4">
+              {timeline.map((t, i) => (
+                <div key={i} className="text-center">
+                  <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center mx-auto mb-3 shadow-md border border-blue-100">
+                    <span className="text-blue-700 font-bold">{i + 1}</span>
+                  </div>
+                  <div className="font-semibold text-gray-900 text-sm">{t.day}</div>
+                  <div className="text-xs text-gray-600 mt-1">{t.task}</div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ═══════════════ Projects Gallery ═══════════════ */}
+      <section id="projects" className="relative py-24 bg-gradient-to-b from-slate-50 via-white to-blue-50/30 overflow-hidden">
+        {/* Decorative blobs */}
+        <div className="absolute top-1/3 left-0 w-96 h-96 bg-blue-200/40 rounded-full blur-3xl pointer-events-none -translate-x-1/2" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-cyan-200/30 rounded-full blur-3xl pointer-events-none translate-x-1/3" />
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <SectionBadge className="bg-cyan-100 text-cyan-800">Recent Projects</SectionBadge>
+            <motion.h2
+              variants={fadeInUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-5"
+            >
+              Real Roof <span className="text-cyan-700">Transformation</span>
+            </motion.h2>
+            <motion.p
+              variants={fadeInUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="text-lg text-gray-600 max-w-3xl mx-auto"
+            >
+              A snapshot of our on-site roof waterproofing and heatproofing work with clean finishing and durable protection
+            </motion.p>
+          </div>
+
+          {/* Project Cards */}
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-100px' }}
+            className="grid md:grid-cols-2 gap-8"
+          >
+            {projectGallery.map((project, index) => (
+              <motion.div
+                key={index}
+                variants={fadeInUp}
+                custom={index}
+                whileHover={{ y: -6, transition: { duration: 0.4 } }}
+                className="group bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden border border-slate-200/60 shadow-lg shadow-slate-200/40 transition-shadow duration-500 hover:shadow-2xl hover:shadow-cyan-900/10"
+              >
+                <div className="relative overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-64 sm:h-72 object-cover transition-transform duration-700 group-hover:scale-105"
+                    draggable={false}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-slate-900/20 to-transparent" />
+                  <div className="absolute top-4 left-4">
+                    <span className="inline-flex items-center rounded-full bg-white/90 backdrop-blur-sm px-4 py-1.5 text-xs font-semibold text-slate-700 shadow-md">
+                      Project {index + 1}
+                    </span>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-slate-900 mb-2">{project.title}</h3>
+                  <p className="text-slate-600 leading-relaxed text-sm">{project.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ═══════════════ Testimonials ═══════════════ */}
+      <section className="relative py-24 bg-gradient-to-br from-gray-900 via-slate-900 to-blue-950 overflow-hidden">
+        {/* Background pattern */}
+        <div className="absolute inset-0 opacity-[0.04] pointer-events-none">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_1px_at_1px_1px,white_1px,transparent_0)] bg-[length:32px_32px]" />
+        </div>
+        {/* Decorative blobs */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none translate-x-1/3 -translate-y-1/3" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-cyan-600/10 rounded-full blur-3xl pointer-events-none -translate-x-1/3 translate-y-1/3" />
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <SectionBadge className="bg-white/10 text-white glass">Client Testimonials</SectionBadge>
+            <motion.h2
+              variants={fadeInUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-5"
+            >
+              What Our <span className="text-orange-400">Clients</span> Say
+            </motion.h2>
+            <motion.p
+              variants={fadeInUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="text-lg text-gray-400 max-w-3xl mx-auto"
+            >
+              Trusted by hundreds of satisfied customers across Quetta
+            </motion.p>
+          </div>
+
+          {/* Testimonial Cards */}
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-100px' }}
+            className="grid md:grid-cols-3 gap-8"
+          >
+            {testimonials.map((t, index) => (
+              <motion.div
+                key={index}
+                variants={fadeInUp}
+                custom={index}
+                whileHover={{ y: -6, scale: 1.02, transition: { duration: 0.4 } }}
+                className="glass rounded-2xl p-8 transition-all duration-500 hover:bg-white/[0.15] hover:shadow-2xl hover:shadow-blue-500/10"
+              >
+                {/* Stars */}
+                <div className="flex items-center mb-6">
+                  {Array.from({ length: t.rating }).map((_, i) => (
+                    <Star key={i} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
+                  ))}
+                </div>
+                {/* Quote */}
+                <blockquote className="text-white/90 mb-8 text-base leading-relaxed italic">
+                  &ldquo;{t.content}&rdquo;
+                </blockquote>
+                {/* Author */}
+                <div className="flex items-center">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-orange-500 rounded-full flex items-center justify-center text-white font-bold text-lg mr-4 shadow-lg">
+                    {t.name.charAt(0)}
+                  </div>
+                  <div>
+                    <p className="font-semibold text-white">{t.name}</p>
+                    <p className="text-gray-400 text-sm">{t.role}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          {/* Trust Badges */}
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 text-center"
+          >
+            {[
+              { icon: Shield, label: 'Licensed', sub: 'Fully Certified' },
+              { icon: CheckCircle, label: 'Insured', sub: 'Full Coverage' },
+              { icon: Star, label: '5-Star Rated', sub: 'Top Quality' },
+              { icon: Droplets, label: 'Warranty', sub: '5 Years' },
+            ].map((badge, i) => (
+              <motion.div key={badge.label} variants={fadeInUp} custom={i} className="group">
+                <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-white/20 transition-colors duration-300 backdrop-blur-sm">
+                  <badge.icon className="h-8 w-8 text-white/80" />
+                </div>
+                <div className="text-white font-semibold">{badge.label}</div>
+                <div className="text-gray-400 text-sm">{badge.sub}</div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+
+      {/* ═══════════════ About Section ═══════════════ */}
+      <section id="about" className="relative py-24 bg-white overflow-hidden">
+        {/* Decorative blob */}
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-br from-blue-100/50 to-orange-100/30 rounded-full translate-x-1/4 -translate-y-1/4 blur-3xl pointer-events-none" />
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Left - Images */}
+            <motion.div
+              variants={fadeInLeft}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="relative"
+            >
+              <div className="grid grid-cols-2 gap-4">
+                <img
+                  src="https://images.pexels.com/photos/5025639/pexels-photo-5025639.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  alt="Professional team"
+                  className="rounded-2xl shadow-xl h-64 sm:h-72 object-cover hover:shadow-2xl transition-shadow duration-500"
+                  draggable={false}
+                />
+                <img
+                  src="https://images.pexels.com/photos/3760263/pexels-photo-3760263.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  alt="Quality work"
+                  className="rounded-2xl shadow-xl h-64 sm:h-72 object-cover mt-8 hover:shadow-2xl transition-shadow duration-500"
+                  draggable={false}
+                />
+              </div>
+
+              {/* Floating Stats Card */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.5, type: 'spring', damping: 15 }}
+                className="absolute -bottom-6 -right-2 sm:right-4 bg-white rounded-2xl shadow-2xl p-5 border border-gray-100"
+              >
+                <div className="text-center">
+                  <div className="text-3xl font-extrabold bg-gradient-to-r from-blue-700 to-cyan-600 bg-clip-text text-transparent">98%</div>
+                  <div className="text-gray-500 text-sm font-medium">Success Rate</div>
+                </div>
+              </motion.div>
+            </motion.div>
+
+            {/* Right - Content */}
+            <motion.div
+              variants={fadeInRight}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
+              <SectionBadge className="bg-blue-100 text-blue-700">About Us</SectionBadge>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+                Quetta&apos;s Most <span className="text-blue-700">Trusted</span> Waterproofing Experts
+              </h2>
+              <p className="text-gray-600 mb-4 leading-relaxed text-base">
+                With over a decade of experience in waterproofing solutions, Quetta Chemical Service has been the trusted choice for property owners throughout Quetta. We specialize in advanced ceiling waterproofing, comprehensive heatproofing, and complete water protection systems.
+              </p>
+              <p className="text-gray-600 mb-8 leading-relaxed text-base">
+                Our team of certified professionals uses only the highest quality materials and latest techniques to ensure long-lasting results that protect your investment. We&apos;re not just contractors &ndash; we&apos;re your partners in property protection.
+              </p>
+
+              {/* Features Grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+                {[
+                  { icon: CheckCircle, text: 'Certified Professionals', color: 'bg-blue-50 text-blue-600' },
+                  { icon: CheckCircle, text: 'Premium Materials', color: 'bg-orange-50 text-orange-600' },
+                  { icon: CheckCircle, text: '5-Year Warranty', color: 'bg-green-50 text-green-600' },
+                  { icon: CheckCircle, text: '24/7 Support', color: 'bg-purple-50 text-purple-600' },
+                ].map((f, i) => (
+                  <div key={i} className={cn('flex items-center space-x-3 p-4 rounded-xl', f.color.split(' ')[0])}>
+                    <f.icon className={cn('h-6 w-6 flex-shrink-0', f.color.split(' ')[1])} />
+                    <span className="font-semibold text-gray-800 text-sm">{f.text}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* CTAs */}
+              <div className="flex flex-col sm:flex-row gap-4">
+                <button
+                  onClick={handleWhatsAppRedirect}
+                  className="inline-flex items-center justify-center px-7 py-4 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white rounded-xl font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 hover:scale-[1.03] active:scale-[0.97]"
+                >
+                  <Phone className="mr-2 h-5 w-5" />
+                  Call Now
+                </button>
+                <button
+                  onClick={handleWhatsAppRedirect}
+                  className="inline-flex items-center justify-center px-7 py-4 border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white rounded-xl font-semibold transition-all duration-300 hover:scale-[1.03] active:scale-[0.97]"
+                >
+                  <Mail className="mr-2 h-5 w-5" />
+                  Get Quote
+                </button>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════ Contact Section ═══════════════ */}
+      <section id="contact" className="relative py-24 bg-gradient-to-br from-blue-800 via-blue-900 to-slate-900 overflow-hidden">
+        {/* Decorative blobs */}
+        <div className="absolute top-0 left-0 w-72 h-72 bg-white/5 rounded-full -translate-x-36 -translate-y-36 blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-orange-500/10 rounded-full translate-x-48 translate-y-48 blur-3xl pointer-events-none" />
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Section Header */}
+          <div className="text-center mb-12 sm:mb-16">
+            <SectionBadge className="bg-white/10 text-white glass">Contact Us</SectionBadge>
+            <motion.h2
+              variants={fadeInUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-5"
+            >
+              Ready to <span className="text-orange-400">Protect</span> Your Property?
+            </motion.h2>
+            <motion.p
+              variants={fadeInUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="text-lg text-blue-200 max-w-2xl mx-auto"
+            >
+              Get your free consultation today and discover why we&apos;re Quetta&apos;s #1 choice for waterproofing
+            </motion.p>
+          </div>
+
+          {/* Contact Cards */}
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12"
+          >
+            {/* Phone */}
+            <motion.div variants={fadeInUp} custom={0} className="glass rounded-2xl p-6 sm:p-8 text-center hover:bg-white/[0.15] transition-all duration-300 group">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-5 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-blue-500/25">
+                <Phone className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-4">Call Us Now</h3>
+              <div className="space-y-1 mb-4">
+                <p className="text-blue-100 text-base">+92 0302-3684297</p>
+                <p className="text-blue-100 text-base">+92 0315-8022932</p>
+                <p className="text-blue-100 text-base">+92 0315-1221594</p>
+              </div>
+              <p className="text-blue-300 text-sm">Available 24/7 for emergencies</p>
+            </motion.div>
+
+            {/* Email */}
+            <motion.div variants={fadeInUp} custom={1} className="glass rounded-2xl p-6 sm:p-8 text-center hover:bg-white/[0.15] transition-all duration-300 group">
+              <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-5 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-orange-500/25">
+                <Mail className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-4">Email Us</h3>
+              <p className="text-blue-100 text-base mb-1">quettachemicals.services@gmail.com</p>
+              <p className="text-blue-200 text-sm mt-4">Response within 2 hours</p>
+            </motion.div>
+
+            {/* Location */}
+            <motion.div variants={fadeInUp} custom={2} className="glass rounded-2xl p-6 sm:p-8 text-center hover:bg-white/[0.15] transition-all duration-300 group sm:col-span-2 lg:col-span-1">
+              <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-5 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-green-500/25">
+                <MapPin className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-4">Visit Our Office</h3>
+              <p className="text-blue-100 text-base">Block 13-D2, Gulshan-e-Iqbal, Karachi</p>
+              <p className="text-blue-200 text-sm mt-4">Mon-Sat: 8AM-6PM</p>
+            </motion.div>
+          </motion.div>
+
+          {/* CTA Buttons */}
+          <motion.div
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
+          >
+            <button
+              onClick={handleWhatsAppRedirect}
+              className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-xl font-semibold shadow-xl shadow-orange-500/20 transition-all duration-300 hover:shadow-2xl hover:shadow-orange-500/30 hover:scale-[1.03] active:scale-[0.97]"
+            >
+              <Phone className="mr-2 h-5 w-5" />
+              Call for Emergency Service
+            </button>
+            <button
+              onClick={handleWhatsAppRedirect}
+              className="inline-flex items-center justify-center px-8 py-4 border-2 border-white/30 text-white hover:bg-white hover:text-blue-900 rounded-xl font-semibold backdrop-blur-sm transition-all duration-300 hover:border-white hover:scale-[1.03] active:scale-[0.97]"
+            >
+              <Mail className="mr-2 h-5 w-5" />
+              Request Free Quote
+            </button>
+          </motion.div>
+
+          {/* Quick Contact Form */}
+          <motion.div
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <div className="max-w-2xl mx-auto glass rounded-3xl p-8 sm:p-10">
+              <h3 className="text-2xl font-bold text-white mb-6 text-center">Quick Contact Form</h3>
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  setShowEmailPopup(true);
+                }}
+                className="space-y-4"
+              >
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <input
+                    type="text"
+                    placeholder="Your Name"
+                    required
+                    className="px-5 py-3.5 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-transparent transition-all duration-300"
+                  />
+                  <input
+                    type="tel"
+                    placeholder="Phone Number"
+                    required
+                    className="px-5 py-3.5 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-transparent transition-all duration-300"
+                  />
+                </div>
+                <input
+                  type="email"
+                  placeholder="Your Email"
+                  required
+                  className="w-full px-5 py-3.5 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-transparent transition-all duration-300"
+                />
+                <select
+                  required
+                  defaultValue=""
+                  className="w-full px-5 py-3.5 bg-white/10 border border-white/20 rounded-xl text-gray-400 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-transparent transition-all duration-300"
+                >
+                  <option value="" disabled>Select Service Type</option>
+                  {serviceOptions.map((s) => (
+                    <option key={s} value={s} className="text-gray-900">{s}</option>
+                  ))}
+                </select>
+                <textarea
+                  placeholder="Brief description of your requirements..."
+                  rows={3}
+                  className="w-full px-5 py-3.5 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-transparent transition-all duration-300 resize-none"
+                />
+                <button
+                  type="submit"
+                  className="w-full py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-xl font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-orange-500/25 hover:scale-[1.02] active:scale-[0.97]"
+                >
+                  Send Message
+                  <ArrowRight className="inline ml-2 h-5 w-5" />
+                </button>
+              </form>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ═══════════════ Footer ═══════════════ */}
+      <footer className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-blue-950 text-white pt-16 pb-8 overflow-hidden">
+        {/* Decorative blobs */}
+        <div className="pointer-events-none absolute -top-24 -left-24 w-96 h-96 bg-blue-600/15 rounded-full blur-3xl animate-pulse" />
+        <div className="pointer-events-none absolute -bottom-32 -right-32 w-[32rem] h-[32rem] bg-cyan-400/8 rounded-full blur-3xl" />
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
+            {/* Brand */}
+            <div className="lg:col-span-2">
+              <div className="flex items-center space-x-3 mb-5">
+                <img src="/logo.png" alt="QCS Logo" className="h-10 w-10" />
+                <div>
+                  <span className="font-extrabold text-lg tracking-tight bg-gradient-to-r from-blue-300 via-cyan-200 to-orange-200 bg-clip-text text-transparent block leading-tight">
+                    Quetta Chemical
+                  </span>
+                  <span className="text-gray-400 text-[10px] tracking-wide uppercase">Waterproofing & Heatproofing</span>
+                </div>
+              </div>
+              <p className="text-gray-400 text-sm mb-6 max-w-xs leading-relaxed">
+                Modern, reliable, and affordable waterproofing and heatproofing for homes and businesses in Quetta and beyond.
+              </p>
+              <div className="flex space-x-3">
+                {[
+                  { href: 'https://facebook.com/', icon: 'M22 12.07C22 6.48 17.52 2 12 2S2 6.48 2 12.07c0 5.02 3.66 9.16 8.44 9.93v-7.03h-2.54v-2.9h2.54V9.41c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.23.2 2.23.2v2.45h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.78l-.44 2.9h-2.34v7.03C18.34 21.23 22 17.09 22 12.07z', color: 'bg-blue-600 hover:bg-blue-500' },
+                  { href: 'https://twitter.com/', icon: 'M22.46 6c-.77.35-1.6.59-2.47.7a4.3 4.3 0 0 0 1.88-2.37 8.59 8.59 0 0 1-2.72 1.04A4.28 4.28 0 0 0 11.07 9c0 .34.04.67.1.99C7.72 9.8 4.84 8.13 2.98 5.7c-.37.64-.58 1.39-.58 2.19 0 1.51.77 2.85 1.95 3.63-.72-.02-1.4-.22-1.99-.55v.06c0 2.11 1.5 3.87 3.5 4.27-.36.1-.74.16-1.13.16-.28 0-.54-.03-.8-.08.54 1.7 2.12 2.94 3.99 2.97A8.6 8.6 0 0 1 2 19.54a12.13 12.13 0 0 0 6.56 1.92c7.88 0 12.2-6.53 12.2-12.2 0-.19 0-.37-.01-.56A8.7 8.7 0 0 0 24 4.59a8.48 8.48 0 0 1-2.54.7z', color: 'bg-sky-500 hover:bg-sky-400' },
+                  { href: 'https://youtube.com/', icon: 'M21.8 8.001a2.75 2.75 0 0 0-1.94-1.94C18.13 6 12 6 12 6s-6.13 0-7.86.06A2.75 2.75 0 0 0 2.2 8.001 28.6 28.6 0 0 0 2 12a28.6 28.6 0 0 0 .2 3.999 2.75 2.75 0 0 0 1.94 1.94C5.87 18 12 18 12 18s6.13 0 7.86-.06a2.75 2.75 0 0 0 1.94-1.94A28.6 28.6 0 0 0 22 12a28.6 28.6 0 0 0-.2-3.999zM10 15.5v-7l6 3.5-6 3.5z', color: 'bg-red-600 hover:bg-red-500' },
+                ].map((social, i) => (
+                  <a
+                    key={i}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={cn('w-9 h-9 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110', social.color)}
+                    aria-label="Social"
+                  >
+                    <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d={social.icon} /></svg>
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            {/* Services */}
+            <div>
+              <h4 className="font-semibold text-base mb-4 text-white tracking-wide">Services</h4>
+              <ul className="space-y-3 text-gray-400 text-sm">
+                {[
+                  { icon: Shield, text: 'Ceiling Waterproofing' },
+                  { icon: Sun, text: 'Heat Proofing' },
+                  { icon: Droplets, text: 'Water Proofing' },
+                  { icon: CheckCircle, text: 'Maintenance' },
+                  { icon: Phone, text: 'Emergency Repairs' },
+                ].map((s) => (
+                  <li key={s.text}>
+                    <a href="#services" className="flex items-center gap-2 hover:text-blue-300 transition-colors duration-200">
+                      <s.icon className="h-4 w-4 text-blue-400 flex-shrink-0" />
+                      {s.text}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Quick Links */}
+            <div>
+              <h4 className="font-semibold text-base mb-4 text-white tracking-wide">Quick Links</h4>
+              <ul className="space-y-3 text-gray-400 text-sm">
+                {['About Us', 'Our Services', 'Our Process', 'Contact Us', 'Get Quote'].map((link) => (
+                  <li key={link}>
+                    <a href={`#${link.toLowerCase().replace(/\s+/g, '-')}`} className="hover:text-blue-300 transition-colors duration-200">
+                      {link}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Contact Info */}
+            <div>
+              <h4 className="font-semibold text-base mb-4 text-white tracking-wide">Contact</h4>
+              <ul className="space-y-3 text-gray-400 text-sm">
+                <li className="flex items-center gap-2">
+                  <Phone className="h-4 w-4 text-blue-400 flex-shrink-0" />
+                  <span>+923023684297</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <Mail className="h-4 w-4 text-blue-400 flex-shrink-0" />
+                  <span className="break-all">quettachemicals.services@gmail.com</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <MapPin className="h-4 w-4 text-blue-400 flex-shrink-0 mt-0.5" />
+                  <span>Block 13-D2, Gulshan-e-Iqbal, Karachi</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <Sun className="h-4 w-4 text-yellow-400 flex-shrink-0" />
+                  <span>Mon-Sat: 8AM-6PM</span>
+                </li>
+              </ul>
+
+              {/* Emergency Card */}
+              <div className="mt-6 p-4 bg-gradient-to-r from-red-600/20 to-orange-500/15 border border-red-600/25 rounded-xl flex items-center gap-3">
+                <span className="inline-flex items-center justify-center rounded-full bg-red-600/80 p-2">
+                  <Phone className="h-4 w-4 text-white" />
+                </span>
+                <div>
+                  <p className="text-red-300 font-semibold text-xs">Emergency 24/7</p>
+                  <p className="text-white font-bold text-sm">+92 302-3684297</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom bar */}
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 border-t border-gray-700/50 pt-8">
+            <p className="text-gray-500 text-sm">
+              &copy; 2025 <span className="font-semibold text-blue-300">Quetta Chemical Service</span>. All rights reserved.
+            </p>
+            <div className="flex space-x-6 text-gray-500 text-xs">
+              <a href="#" className="hover:text-blue-300 transition-colors">Privacy Policy</a>
+              <a href="#" className="hover:text-blue-300 transition-colors">Terms</a>
+              <a href="#" className="hover:text-blue-300 transition-colors">Warranty</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      {/* ═══════════════ WhatsApp Floating Button ═══════════════ */}
+      <motion.a
+        href={whatsappUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-6 right-6 z-50 group"
+        aria-label="Chat on WhatsApp"
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.95 }}
+      >
+        <span className="relative flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-br from-green-400 via-green-500 to-emerald-600 shadow-2xl shadow-green-500/30 border-4 border-white/20">
+          <span className="absolute inset-0 rounded-full bg-green-500/20 blur-xl animate-pulse" />
+          <MessageCircle className="relative z-10 h-6 w-6 text-white drop-shadow-lg" />
+          <span className="absolute -top-1 -right-1 bg-white text-green-600 text-[10px] font-bold px-2 py-0.5 rounded-full shadow-lg animate-pulse">
+            Chat
+          </span>
+        </span>
+      </motion.a>
+
+      {/* ═══════════════ Modals ═══════════════ */}
       <AnimatePresence>
         {openService !== null && (
-          <ServiceModal 
-            service={services[openService]} 
-            onClose={() => setOpenService(null)} 
-          />
+          <ServiceModal service={services[openService]} onClose={() => setOpenService(null)} />
         )}
+      </AnimatePresence>
+
+      <AnimatePresence>
         {showEmailPopup && (
-          <EmailProviderPopup 
-            onClose={() => setShowEmailPopup(false)} 
+          <EmailProviderPopup
+            onClose={() => setShowEmailPopup(false)}
             onSelect={(provider) => {
-              console.log('Selected provider:', provider);
+              const email = 'quettachemicals.services@gmail.com';
+              const subject = encodeURIComponent('New Service Quote Request');
+              const body = encodeURIComponent('I would like to request a quote for waterproofing services.');
+              let url = '';
+              switch (provider) {
+                case 'gmail':
+                  url = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}&body=${body}`;
+                  break;
+                case 'outlook':
+                  url = `https://outlook.live.com/mail/0/deeplink/compose?to=${email}&subject=${subject}&body=${body}`;
+                  break;
+                case 'yahoo':
+                  url = `https://compose.mail.yahoo.com/?to=${email}&subject=${subject}&body=${body}`;
+                  break;
+                default:
+                  url = `mailto:${email}?subject=${subject}&body=${body}`;
+              }
+              window.open(url, '_blank');
+              handleWhatsAppRedirect();
               setShowEmailPopup(false);
             }}
           />
