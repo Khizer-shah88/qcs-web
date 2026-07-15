@@ -65,7 +65,7 @@ const services = [
     icon: Shield,
     title: 'Ceiling Waterproofing',
     description: 'Complete ceiling protection with advanced waterproofing solutions to prevent water damage and leakage.',
-    image: 'https://images.pexels.com/photos/2724748/pexels-photo-2724748.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: '/images/ceiling.jpg',
     features: ['Leak Prevention', 'Mold Protection', 'Long-lasting Results'],
   },
   {
@@ -79,14 +79,14 @@ const services = [
     icon: Droplets,
     title: 'Water Proofing',
     description: 'Comprehensive waterproofing solutions for all types of structures and surfaces.',
-    image: 'https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: '/images/hh.jpeg',
     features: ['Moisture Control', 'Structural Protection', 'Quality Materials'],
   },
   {
     icon: Droplets,
     title: 'Water-Tank Leakage Treatment',
     description: 'Expert treatment for water tank leaks ensuring complete sealing and long-term protection.',
-    image: 'https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: 'images/tank.jpeg',
     features: ['Complete Sealing', 'Rust Protection', 'Long-term Durability'],
   },
   {
@@ -100,7 +100,7 @@ const services = [
     icon: Droplets,
     title: 'Floor & Wall Waterproofing',
     description: 'Expert waterproofing for floors and walls to prevent leaks, seepage, and long-term water damage in any area.',
-    image: 'https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: '/images/floor.jpg',
     features: ['Leak & Seepage Control', 'Surface Protection', 'Durable Finish'],
   },
 ];
@@ -115,13 +115,13 @@ const processSteps = [
 
 const testimonials = [
   { name: 'Ahmed Hassan', role: 'Property Owner', content: 'Excellent service! They solved our ceiling leakage problem completely. Professional team and quality work.', rating: 5 },
-  { name: 'Fatima Ali', role: 'Building Manager', content: 'Outstanding heatproofing service. Our electricity bills reduced significantly after their work.', rating: 5 },
+  { name: ' M.Ali', role: 'Building Manager', content: 'Outstanding heatproofing service. Our electricity bills reduced significantly after their work.', rating: 5 },
   { name: 'Muhammad Khan', role: 'Contractor', content: 'Reliable and professional. We regularly recommend Quetta Chemical Service to our clients.', rating: 5 },
 ];
 
 const projectGallery = [
-  { image: 'https://images.pexels.com/photos/2760243/pexels-photo-2760243.jpeg?auto=compress&cs=tinysrgb&w=800', title: 'Fresh Heat-Reflective Roof Finish', description: 'Uniform white coating designed to reduce roof temperature and improve long-term weather resistance.' },
-  { image: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800', title: 'Equipment Base Protection Work', description: 'Detailed waterproofing around raised structures and service units to block seepage at vulnerable joints.' },
+  { image: '/images/top ceil.jpg', title: 'Fresh Heat-Reflective Roof Finish', description: 'Uniform white coating designed to reduce roof temperature and improve long-term weather resistance.' },
+  { image: '/images/equipment.jpeg', title: 'Equipment Base Protection Work', description: 'Detailed waterproofing around raised structures and service units to block seepage at vulnerable joints.' },
   { image: '/images/metal.jpeg', title: 'Metal Roof Joint Sealing', description: 'Targeted treatment on panel overlaps and channels for reliable leak control in exposed roof areas.' },
   { image: '/images/floor.jpg', title: 'Completed Industrial Roof Coating', description: 'Large-scale completed roof with clean finishing and consistent protective coverage across the surface.' },
 ];
@@ -150,6 +150,7 @@ const serviceOptions = [
   'Washroom Leakage Treatment',
   'Floor Walls WaterProofing Treatment',
   'Water Tank Leakage Treatment',
+  
 ];
 
 /* ─────────── Components ─────────── */
